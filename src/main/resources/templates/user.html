@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>User</title>
+</head>
+<body>
+	<h1>User</h1>
+	<p th:text="${user}"></p>
+	<h2>Name</h2>
+	<p th:text="${user.nombre}"></p>
+	<p th:text="${user.apellido1}"></p>
+	<h2>Full Name</h2>
+	<p th:text="${userName}"></p>
+	
+	<h2>If</h2>
+	<div th:if="${user.apellido2}" th:text="${use.apellido2}">
+		<p>there is surname2</p>
+	</div>		
+		 
+	<h2>If else</h2>
+	<div th:if="${user.apellido2} == nul" th:text="'no surname2'" >
+	</div>
+	
+	<div>
+    	<p th:text="${user.apellido2} ? 'True' : 'False'">true o false</p>
+	</div>
+	
+	<h2>modelAttribute - shares in all handlers</h2>
+	<!-- modelAttribute -->
+	<table th:if="${users.size() > 0}">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Surname1</th>
+				<th>Surname2</th>
+				<th>Direction</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="usersList: ${users}">
+			<td th:text="${usersList.nombre}"></td>
+			<td th:text="${usersList.apellido1}"></td>
+			<td th:text="${usersList.apellido2}"></td>
+			<td th:text="${usersList.direccion}"></td>	
+			</tr>		
+		</tbody>			
+	</table>	
+	
+	
+</body>
+</html>

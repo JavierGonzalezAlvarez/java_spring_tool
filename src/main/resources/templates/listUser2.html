@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>User</title>
+</head>
+<body>
+	<h1>Users</h1>
+	<p th:if="${users}"></p>
+	
+	<p th:if="${users.size() == 0}">no users</p>
+	
+	<div th:if="${users.isEmpty()}">no users</div>
+	
+	<p th:text="${users} ? 'there are no users' : 'there are users'"></p>
+				
+	<h1>Foreach Users</h1>
+	<div>
+		<p>Size:</p> <p th:text="${users.size()}"></p>
+	</div>
+	
+	<table th:if="${users.size() > 0}">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Surname1</th>
+				<th>Surname2</th>
+				<th>Direction</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="usersList: ${users}">
+			<td th:text="${usersList.nombre}"></td>
+			<td th:text="${usersList.apellido1}"></td>
+			<td th:text="${usersList.apellido2}"></td>
+			<td th:text="${usersList.direccion}"></td>	
+			</tr>		
+		</tbody>			
+	</table>	
+</body>
+</html>

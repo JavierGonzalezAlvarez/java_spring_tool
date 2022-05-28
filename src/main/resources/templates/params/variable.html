@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>Params Get Variables</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"></link>
+
+</head>
+<body>
+	<h1 class="color-rojo">Params Get - Variables</h1>
+	<h2 class="color-azul">Params - Variables</h2>
+	<div>
+		<p class="color-rojo" th:text="${name}"></p>
+		<p th:text="${salida}"></p>
+		<div class="color-azul" th:text="${salida1}"></div>
+	</div>		
+	<h2>Image</h2>
+	<img th:src="@{/images/house.jpeg}"></p>
+</body>
+</html>
